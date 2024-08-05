@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{% static 'administracion/css/test.css' %}">
+</head>
+<body>
+    <table>
+        <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Autor</td>
+            <td>Fecha de Publicación</td>
+            <td>Categoría</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for libro in libros %}
+            <tr>
+                <td>{{libro.nombre}}</td>
+                <td>{{libro.autor.nombre_completo}}</td>
+                <td>{{libro.fecha_publicacion}}</td>
+                <td>{{libro.get_categoria_display}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<script src="{% static 'administracion/js/test.js' %}"></script>
+</body>
+</html>
