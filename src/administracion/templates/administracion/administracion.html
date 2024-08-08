@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{% static 'administracion/css/test.css' %}">
 </head>
 <body>
+<a href="{% url 'crear' %}">Crear</a>
+
+<a href="{% url 'crear_modelo' %}">Crear por modelo</a>
     <table>
         <thead>
         <tr>
@@ -15,6 +18,7 @@
             <td>Autor</td>
             <td>Fecha de Publicación</td>
             <td>Categoría</td>
+            <td>Acciones</td>
         </tr>
         </thead>
         <tbody>
@@ -24,6 +28,7 @@
                 <td>{{libro.autor.nombre_completo}}</td>
                 <td>{{libro.fecha_publicacion}}</td>
                 <td>{{libro.get_categoria_display}}</td>
+                <td><a href="{% url 'editar_libro' libro.pk  %}">Editar</a></td>
             </tr>
         {% endfor %}
         </tbody>

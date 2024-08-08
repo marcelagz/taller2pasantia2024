@@ -20,7 +20,7 @@ class Libro(models.Model):
 
     nombre = models.CharField(max_length=50)
     autor = models.ForeignKey(Autor, on_delete=CASCADE)
-    fecha_publicacion = models.DateField(verbose_name="Fecha publicación")
+    fecha_publicacion = models.DateField(verbose_name="Fecha")
     categoria = models.SmallIntegerField(choices=CATEGORIAS, default=0)
 
 
